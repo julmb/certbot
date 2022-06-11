@@ -1,4 +1,5 @@
-FROM certbot/certbot:arm64v8-latest
+ARG tag
+FROM certbot/certbot:$tag
 COPY certbot-renew /etc/periodic/daily/certbot-renew
 RUN chmod +x /etc/periodic/daily/certbot-renew
 ENTRYPOINT []
